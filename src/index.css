@@ -1,0 +1,182 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* MTU Clinic Management System - Orange & White Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 24 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 24 10% 10%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 24 10% 10%;
+
+    /* Primary: Orange */
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    /* Secondary: Light orange/cream */
+    --secondary: 30 100% 97%;
+    --secondary-foreground: 24 95% 40%;
+
+    --muted: 24 20% 95%;
+    --muted-foreground: 24 10% 45%;
+
+    --accent: 24 100% 95%;
+    --accent-foreground: 24 95% 40%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+
+    /* Success green for health indicators */
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 100%;
+
+    /* Warning yellow */
+    --warning: 45 93% 47%;
+    --warning-foreground: 24 10% 10%;
+
+    /* Info blue */
+    --info: 199 89% 48%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 24 20% 90%;
+    --input: 24 20% 90%;
+    --ring: 24 95% 53%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar - White with orange accents */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 24 10% 30%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 100% 97%;
+    --sidebar-accent-foreground: 24 95% 40%;
+    --sidebar-border: 24 20% 92%;
+    --sidebar-ring: 24 95% 53%;
+
+    /* Chart colors for analytics */
+    --chart-1: 24 95% 53%;
+    --chart-2: 24 80% 65%;
+    --chart-3: 142 76% 36%;
+    --chart-4: 199 89% 48%;
+    --chart-5: 45 93% 47%;
+  }
+
+  .dark {
+    --background: 24 10% 8%;
+    --foreground: 24 10% 95%;
+
+    --card: 24 10% 12%;
+    --card-foreground: 24 10% 95%;
+
+    --popover: 24 10% 12%;
+    --popover-foreground: 24 10% 95%;
+
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 24 20% 18%;
+    --secondary-foreground: 24 95% 70%;
+
+    --muted: 24 15% 20%;
+    --muted-foreground: 24 10% 60%;
+
+    --accent: 24 30% 20%;
+    --accent-foreground: 24 95% 70%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 142 50% 30%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 45 70% 35%;
+    --warning-foreground: 0 0% 100%;
+
+    --info: 199 60% 35%;
+    --info-foreground: 0 0% 100%;
+
+    --border: 24 15% 20%;
+    --input: 24 15% 20%;
+    --ring: 24 95% 53%;
+
+    --sidebar-background: 24 10% 10%;
+    --sidebar-foreground: 24 10% 85%;
+    --sidebar-primary: 24 95% 53%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 24 20% 18%;
+    --sidebar-accent-foreground: 24 95% 70%;
+    --sidebar-border: 24 15% 18%;
+    --sidebar-ring: 24 95% 53%;
+
+    --chart-1: 24 95% 53%;
+    --chart-2: 24 80% 65%;
+    --chart-3: 142 50% 45%;
+    --chart-4: 199 70% 50%;
+    --chart-5: 45 80% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  /* Custom scrollbar for healthcare aesthetic */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/30 rounded-full hover:bg-primary/50 transition-colors;
+  }
+}
+
+@layer utilities {
+  /* Healthcare status indicators */
+  .status-waiting {
+    @apply bg-warning/20 text-warning border-warning/30;
+  }
+
+  .status-in-progress {
+    @apply bg-info/20 text-info border-info/30;
+  }
+
+  .status-completed {
+    @apply bg-success/20 text-success border-success/30;
+  }
+
+  .status-urgent {
+    @apply bg-destructive/20 text-destructive border-destructive/30;
+  }
+
+  /* Card hover effects */
+  .card-interactive {
+    @apply transition-all duration-200 hover:shadow-lg hover:border-primary/20 cursor-pointer;
+  }
+
+  /* Gradient backgrounds */
+  .gradient-primary {
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(24 95% 45%) 100%);
+  }
+
+  .gradient-subtle {
+    background: linear-gradient(180deg, hsl(var(--background)) 0%, hsl(var(--muted)) 100%);
+  }
+}
